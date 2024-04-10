@@ -1,0 +1,13 @@
+syntax = "proto3";
+package access;
+message AceesKeyRequest{
+    string key = 1;
+}
+message AccessKeyResponse {
+  string key = 1;
+  int32 rateLimit = 2;
+  string expiration = 3;
+}
+service AccessKeyService {
+  rpc AccessKeyDetails(AceesKeyRequest) returns (AccessKeyResponse);
+}
